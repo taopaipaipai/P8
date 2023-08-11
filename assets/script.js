@@ -17,36 +17,16 @@ const slides = [
 	}
 ]
 
-// 30/07/2023 06:30:33 evenement si clique affiche le message "Salut"
-element.addEventListener("click", cliqueGauche);
-element.addEventListener("click", cliqueDroit);
+const ArrowGauche = document.querySelector(".arrow_left"); // suite cours de from Scrtach il fallait mettre le . pour que la class soit reconnue !! 10/08/2023 17:50:50
+const ArrowDroit  = document.querySelector(".arrow_right"); // suite cours de from Scrtach il fallait mettre le . pour que la class soit reconnue !! 10/08/2023 17:50:50
 
-function cliqueGauche() {
-	// avec la metode alerte
-  alert ("vous avez cliqué sur le Arrow de Gauche");
-}
 
-function cliqueDroit() {
-	// avec la metode alerte
-  alert ("vous avez cliqué sur le Arrow de Droit");
-}
+// maj et correction le 10/08/2023 18:18:45
+ArrowGauche.addEventListener("click", ()=> {
+	console.log ("vous avez cliqué sur le Arrow de Gauche");
+	});
 
-// plus complexe : surevillance de la souris et dit sur quelle bouton on a clické !!
+ArrowDroit.addEventListener('click', ()=> {
+	console.log ("vous avez cliqué sur le Arrow de Droit");
+	});
 
-let button = document.querySelector("arrow_right");
-button.addEventListener("mouseup", (e) => {
-  let log = document.querySelector("#log");
-  switch (e.button) {
-    case 0:
-      log.textContent = "Left button clicked.";
-      break;
-    case 1:
-      log.textContent = "Middle button clicked.";
-      break;
-    case 2:
-      log.textContent = "Right button clicked.";
-      break;
-    default:
-      log.textContent = `Unknown button code: ${e.button}`;
-  }
-});
