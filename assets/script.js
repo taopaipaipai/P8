@@ -53,8 +53,30 @@ let currentIndex = 0;
 
 function majSlider(NavigueSlide) {
  
+// Début instruction du switch / case
  currentIndex = currentIndex + NavigueSlide;
+ const maXXi = tailleTableau;
  
+ console.log(" Valeur de la variable currentIndex AVANT d'entrer dans le switch/case vaut : " + currentIndex)
+  
+ switch (currentIndex) {
+    case maXXi:
+        currentIndex = 0 
+        console.log(" Maximum atteint on reset la valeur à 0 !")
+        break
+    case -1 :
+        currentIndex = tailleTableau - 1
+        console.log(" Valeur négatif interdite, on l'a passe au max c-a-d à "+ currentIndex)
+        break
+
+    default:
+        console.log(" OK tous va bien pas de valeur bizarre !! ")
+}
+
+ console.log(" Valeur de la variable currentIndex AprèS d'entrer dans le switch/case vaut : " + currentIndex)
+
+// fin instruction switch / case 
+
  const slide = slides[currentIndex];
  console.log(currentIndex);
  console.log(slide.image);
